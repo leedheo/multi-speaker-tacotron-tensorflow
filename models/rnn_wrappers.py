@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.rnn import RNNCell
 from tensorflow.python.ops import rnn_cell_impl
-from tensorflow.contrib.data.python.util import nest
+from tensorflow.contrib.framework import nest
 from tensorflow.contrib.seq2seq.python.ops.attention_wrapper \
                 import _bahdanau_score, _BaseAttentionMechanism, BahdanauAttention, \
                              AttentionWrapperState, AttentionMechanism
