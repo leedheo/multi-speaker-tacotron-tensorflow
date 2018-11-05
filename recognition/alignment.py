@@ -109,7 +109,10 @@ def align_text_fn(
                     for candidate in candidates}
     sorted_scores = sorted(scores.items(), key=operator.itemgetter(1))[::-1]
 
-    first, second = sorted_scores[0], sorted_scores[1]
+    if len(sorted_scores) == 1:
+        first, second = sorted_scores[0], sorted_scores[0]
+    else:
+        first, second = sorted_scores[0], sorted_scores[1]
 
     if first[1] > second[1] and first[1] >= score_threshold:
         found_text, score = first
